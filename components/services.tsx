@@ -27,12 +27,12 @@ export function Services() {
         <div className="mb-24 grid items-center gap-12 lg:grid-cols-2">
           <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
             <Image
-              src="/images/info1.png"
+              src="/images/test3.png"
               alt="Industrial warehouse with organized shelving and equipment for procurement services"
               fill
               className="object-contain"
             />
-            <div className="absolute inset-0 bg-primary/20" />
+            <div className="absolute bg-primary/20" />
           </div>
           <div>
             <p className="mb-3 text-xs uppercase tracking-[0.2em] text-accent font-medium">

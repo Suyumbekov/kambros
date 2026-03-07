@@ -50,7 +50,7 @@ export function Navbar() {
             className="flex items-center gap-2 text-xs text-primary-foreground/70 transition-colors hover:text-primary-foreground"
           >
             <Mail className="h-3.5 w-3.5" />
-            <span>test@kambros.com</span>
+            <span>sales@kambros.com</span>
           </a>
           <a
             href="tel:+12814662708"

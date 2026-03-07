@@ -1,5 +1,6 @@
 import { Anchor, Phone, MapPin, Mail } from "lucide-react"
 import { Separator } from "@/components/ui/separator"
+import Link from "next/link"
 
 export function Footer() {
   return (
@@ -23,7 +24,7 @@ export function Footer() {
               </div>
             </div>
             <p className="mt-4 text-sm leading-relaxed text-primary-foreground/60">
-              Procurement Services & Logistics. Providing tailor-made solutions with over 40 years
+              Procurement Services & Logistics. Providing tailor-made solutions with over 20 years
               of experience in international supply chain management.
             </p>
           </div>
@@ -84,12 +85,12 @@ export function Footer() {
             {"© 2026 Kambros LLC. All rights reserved."}
           </p>
           <div className="flex gap-6">
-            <a href="#" className="text-xs text-primary-foreground/40 transition-colors hover:text-primary-foreground/70">
+            <Link href="/privacy-policy" className="text-xs text-primary-foreground/40 transition-colors hover:text-primary-foreground/70">
               Privacy Policy
-            </a>
-            <a href="#" className="text-xs text-primary-foreground/40 transition-colors hover:text-primary-foreground/70">
+            </Link>
+            <Link href="/terms-of-service" className="text-xs text-primary-foreground/40 transition-colors hover:text-primary-foreground/70">
               Terms of Service
-            </a>
+            </Link>
           </div>
         </div>
       </div>

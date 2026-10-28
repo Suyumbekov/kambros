@@ -38,7 +38,7 @@ export function Footer() {
             >
               Contact Us
             </h3>
-            <ContactForm />
+            <ContactForm accessKey={process.env.WEB3FORMS_ACCESS_KEY?.trim()} />
           </div>
         </div>
 

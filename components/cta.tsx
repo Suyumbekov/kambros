@@ -23,12 +23,6 @@ export function CTA() {
             Get in Touch
             <ArrowRight className="h-4 w-4" />
           </Link>
-          <a
-            href="tel:+31180331100"
-            className="inline-flex items-center gap-2 rounded-md border border-border px-8 py-3 text-sm font-medium text-secondary-foreground transition-colors hover:bg-background"
-          >
-            Call Our EU Office
-          </a>
         </div>
       </div>
     </section>

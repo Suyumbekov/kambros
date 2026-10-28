@@ -1,4 +1,5 @@
-import { Anchor, Phone, MapPin, Mail } from "lucide-react"
+import { Anchor } from "lucide-react"
+import { ContactForm } from "@/components/contact-form"
 import { Separator } from "@/components/ui/separator"
 import Link from "next/link"
 
@@ -29,52 +30,15 @@ export function Footer() {
             </p>
           </div>
 
-          {/* USA Office */}
-          <div>
+          {/* Contact form */}
+          <div className="md:col-span-2">
             <h3
               className="mb-4 text-xs font-semibold uppercase tracking-widest text-accent"
               style={{ fontFamily: "var(--font-heading)" }}
             >
-              USA Office
+              Contact Us
             </h3>
-            <div className="flex flex-col gap-3 text-sm text-primary-foreground/70">
-              <div className="flex items-start gap-2.5">
-                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary-foreground/40" />
-                <div>
-                  <p>4402 Theiss Road</p>
-                  <p>Humble, Texas, 77338</p>
-                  <p>United States of America</p>
-                </div>
-              </div>
-              <a href="tel:+12814662708" className="flex items-center gap-2.5 transition-colors hover:text-primary-foreground">
-                <Phone className="h-4 w-4 text-primary-foreground/40" />
-                +1 (281) 466 27 08
-              </a>
-            </div>
-          </div>
-
-          {/* Europe Office */}
-          <div>
-            <h3
-              className="mb-4 text-xs font-semibold uppercase tracking-widest text-accent"
-              style={{ fontFamily: "var(--font-heading)" }}
-            >
-              Europe Office
-            </h3>
-            <div className="flex flex-col gap-3 text-sm text-primary-foreground/70">
-              <div className="flex items-start gap-2.5">
-                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary-foreground/40" />
-                <div>
-                  <p>Pastoriestraat 1B</p>
-                  <p>3195 HT, Pernis-Rotterdam</p>
-                  <p>The Netherlands</p>
-                </div>
-              </div>
-              <a href="tel:+31180331100" className="flex items-center gap-2.5 transition-colors hover:text-primary-foreground">
-                <Phone className="h-4 w-4 text-primary-foreground/40" />
-                +31 180 33 11 00
-              </a>
-            </div>
+            <ContactForm accessKey={process.env.WEB3FORMS_ACCESS_KEY?.trim()} />
           </div>
         </div>
 

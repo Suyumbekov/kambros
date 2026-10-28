@@ -52,13 +52,6 @@ export function Navbar() {
             <Mail className="h-3.5 w-3.5" />
             <span>sales@kambros.com</span>
           </a>
-          <a
-            href="tel:+12814662708"
-            className="flex items-center gap-2 text-xs text-primary-foreground/70 transition-colors hover:text-primary-foreground"
-          >
-            <Phone className="h-3.5 w-3.5" />
-            <span>US: +1 281 466 2708</span>
-          </a>
         </div>
 
         <button

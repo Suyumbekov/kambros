@@ -205,15 +205,13 @@ export function ContactForm({ accessKey }: ContactFormProps) {
         </div>
       </fieldset>
 
-      <p role="status" aria-atomic="true" className="mt-3 text-sm text-primary-foreground/70">
-        {!accessKey
-          ? "The contact form is temporarily unavailable. Please try again later."
-          : status === "success"
+      {(status === "success" || status === "error") && (
+        <p role="status" aria-atomic="true" className="mt-3 text-sm text-primary-foreground/70">
+          {status === "success"
             ? "Thank you! Your inquiry has been sent. We will be in touch soon."
-            : status === "error"
-              ? errorMessage
-              : ""}
-      </p>
+            : errorMessage}
+        </p>
+      )}
     </form>
   )
 }

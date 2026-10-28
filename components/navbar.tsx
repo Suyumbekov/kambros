@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { Phone, Menu, X, Anchor, Mail } from "lucide-react"
+import { Menu, X, Anchor, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const navLinks = [
@@ -46,7 +46,7 @@ export function Navbar() {
 
         <div className="hidden items-center gap-4 md:flex">
           <a
-            href="tel:+31180331100"
+            href="mailto:sales@kambros.com"
             className="flex items-center gap-2 text-xs text-primary-foreground/70 transition-colors hover:text-primary-foreground"
           >
             <Mail className="h-3.5 w-3.5" />
@@ -76,16 +76,6 @@ export function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <div className="mt-4 flex flex-col gap-2">
-              <a href="tel:+31180331100" className="flex items-center gap-2 text-xs text-primary-foreground/70">
-                <Phone className="h-3.5 w-3.5" />
-                EU: +31 180 33 11 00
-              </a>
-              <a href="tel:+12814662708" className="flex items-center gap-2 text-xs text-primary-foreground/70">
-                <Phone className="h-3.5 w-3.5" />
-                US: +1 281 466 2708
-              </a>
-            </div>
           </nav>
         </div>
       )}

@@ -4,14 +4,10 @@ import { useRef, useState, type FormEvent } from "react"
 import HCaptcha from "@hcaptcha/react-hcaptcha"
 import { ArrowRight } from "lucide-react"
 
-type ContactFormProps = {
-  accessKey?: string
-}
-
 const fieldClassName =
   "mt-2 block w-full rounded-md border border-primary-foreground/40 bg-primary-foreground px-4 py-3 text-sm text-primary shadow-sm outline-none transition-colors placeholder:text-primary/50 focus:border-accent focus:ring-2 focus:ring-accent/50 disabled:opacity-60"
 
-export function ContactForm({ accessKey }: ContactFormProps) {
+export function ContactForm() {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle")
   const [errorMessage, setErrorMessage] = useState("")
   const [captchaToken, setCaptchaToken] = useState("")
@@ -20,7 +16,7 @@ export function ContactForm({ accessKey }: ContactFormProps) {
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
-    if (isSubmitting || !accessKey) return
+    if (isSubmitting) return
 
     if (!captchaToken) {
       setErrorMessage("Please complete the verification before sending your inquiry.")
@@ -32,7 +28,6 @@ export function ContactForm({ accessKey }: ContactFormProps) {
     const formData = new FormData(form)
     if (formData.get("botcheck")) return
 
-    formData.append("access_key", accessKey)
     formData.append("subject", "New inquiry from the Kambros website")
     formData.append("from_name", "Kambros Website")
     formData.set("h-captcha-response", captchaToken)
@@ -41,7 +36,7 @@ export function ContactForm({ accessKey }: ContactFormProps) {
     setStatus("submitting")
 
     try {
-      const response = await fetch("https://api.web3forms.com/submit", {
+      const response = await fetch("/.netlify/functions/contact", {
         method: "POST",
         headers: { Accept: "application/json" },
         body: formData,
@@ -196,7 +191,7 @@ export function ContactForm({ accessKey }: ContactFormProps) {
         <div className="sm:col-span-2">
           <button
             type="submit"
-            disabled={isSubmitting || !accessKey || !captchaToken}
+            disabled={isSubmitting || !captchaToken}
             className="inline-flex items-center gap-2 rounded-md bg-accent px-6 py-3 text-sm font-medium text-accent-foreground transition-colors hover:bg-accent/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent disabled:cursor-not-allowed disabled:opacity-50"
           >
             {isSubmitting ? "Sending..." : "Send Inquiry"}
